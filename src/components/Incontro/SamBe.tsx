@@ -5,7 +5,7 @@ import AsideInfoSalon from "./AsideInfoSalon"
 const SamBe = () => {
   return (
     <>
-      <div className="flex flex-col sm:grid sm:grid-cols-[250px,1fr]  w-full">
+      <div className="flex flex-col md:grid md:grid-cols-[250px,1fr] w-full">
         <Aside/>
         <section className="overflow-hidden">
           <AsideInfoSalon/>

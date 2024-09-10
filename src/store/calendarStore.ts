@@ -1,10 +1,10 @@
-import { customAxios } from '@/axios/axios';
-import { Disponibilidad } from '@/types';
+import { customAxios } from '@/axios/axios.interceptor';
+import { DataDay } from '@/types';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 interface StateCalendar {
-    enabledDays: Disponibilidad[];
+    enabledDays: DataDay[];
     enabledDates: string[];
     daySelectedByUser: string ;
     getEnabledDays: () => Promise<void>;
@@ -22,9 +22,10 @@ export const UseCalendarStore = create<StateCalendar>()(persist((set) => ({
         try {
           const request = await customAxios.get("calendar/days");
           if (request.data) {
-            const daysArray: Disponibilidad[] = request.data;
+            const daysArray: DataDay[] = request.data;
             set({ enabledDays: daysArray });
-            const datesArray = daysArray.map((day: Disponibilidad) => day.date);
+            const filterDates = daysArray.filter(i => i.state === 'enabled')
+            const datesArray = filterDates.map(i=>i.date)
             set({ enabledDates: datesArray });
           }
         } catch (error) {
@@ -33,7 +34,7 @@ export const UseCalendarStore = create<StateCalendar>()(persist((set) => ({
       },
     }),
     {
-      name: 'calendar', // unique name for storage
+      name: 'calendar', 
     }
   )
 );

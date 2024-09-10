@@ -10,12 +10,12 @@ import { UseCalendarStore } from '@/store/calendarStore';
 const AllDates = () => {
     dayjs.locale("it")
     const localizer = dayjsLocalizer(dayjs)
-
     const fetchEnabledDays = UseCalendarStore(state =>  state.getEnabledDays)
     const enabledDatesStore = UseCalendarStore(state =>  state.enabledDates)
+    console.log(enabledDatesStore);
+    
     const selectDayByUser = UseCalendarStore(state =>  state.selectDayByUser)
     const [selectedEvent, setSelectedEvent] = useState<unknown>(null);
-    console.log(selectedEvent);
     
     useEffect(()=>{
       fetchEnabledDays()
@@ -23,16 +23,18 @@ const AllDates = () => {
     
     const handleSelectSlot = (e: SlotInfo) => {
       const formattedDate = dayjs(e.start).format('YYYY-MM-DD');
+      const pr = enabledDatesStore?.includes(formattedDate)
+      console.log(pr);
       
       if (enabledDatesStore?.includes(formattedDate)) {
-          selectDayByUser(formattedDate);
-          setSelectedEvent(e);
-        } 
+        selectDayByUser(formattedDate);
+        setSelectedEvent(e);
+      } 
     };
 
     const dayPropGetter = (date: Date) => {
       const formattedDate = moment(date).format('YYYY-MM-DD');
-      if (!enabledDatesStore?.includes(formattedDate)) {
+      if (!enabledDatesStore?.includes(formattedDate)  ) {
         return {
           className: 'rbc-disabled-day'
         };

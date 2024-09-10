@@ -5,15 +5,26 @@ export interface event {
 }
 
 
-interface Disponibilidad {
-    date: string; // YYYY-MM-DD format
-    disponibilidad: string[] | []; // Array of available times in HH:mm format
-  }
+interface DataDay {
+  date: string
+  disponibilidad: Disponibilidad[] | []
+  state: string
+  location: string
+}
+
+interface Disponibilidad{
+  hour: string
+  id: string
+}
   
-  // Define the structure for a calendar event
-  interface CalendarEvent {
-    title: string;
-    start: Date;
-    end: Date;
-    allDay: boolean;
-  }
+interface CalendarEvent {
+  title: string;
+  start: Date;
+  end: Date;
+  allDay: boolean;
+}
+
+interface Admin{
+  name: string,
+  rol: string
+}

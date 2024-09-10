@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { customAxios } from "@/axios/axios"
+import { customAxios } from "@/axios/axios.interceptor"
 import { Toaster , toast} from 'sonner'
 const MyDates = () => {
 
