@@ -4,12 +4,12 @@ import Selectubication from "./Selectubication"
 
 const StartView = () => {
   return (
-    <>
-        <div className="flex flex-col md:grid md:grid-cols-[250px,1fr]  w-full">
-            <Aside/>
-            <Selectubication/>
-        </div>
-    </>
+    <div className="max-h-screen w-full flex-col flex">
+      <Aside/>
+      <div className=" items-center justify-center h-full flex  w-full">
+        <Selectubication/>
+      </div>
+    </div>
   )
 }
 

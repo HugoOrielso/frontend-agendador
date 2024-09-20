@@ -7,6 +7,7 @@ import AdminInicio from '@/components/Private/AdminInicio'
 import AdminLogin from '@/components/Private/AdminLogin'
 import ProteccionAdmin from '@/components/Private/ProteccionAdmin'
 import PublicProteccion from '@/components/PublicProteccion'
+import ConfirmarCita from '@/components/Incontro/ConfirmarCita'
 
 const Routing = () => {
   return (
@@ -19,11 +20,11 @@ const Routing = () => {
             <Route path='/incontrosbt' element={<SamBe />} />
             <Route path='/lemieappuntamenti' element={<Appuntamenti />} />
             <Route path='/administrazione' element={<AdminLogin/>} />
+            <Route path='/confirmare-apputamenti' element={<ConfirmarCita/>} />
           </Route>
           
           <Route element={<ProteccionAdmin/>}>
             <Route path='/administrazione/inizio' element={<AdminInicio/>} />
-
           </Route>
         </Routes>
 

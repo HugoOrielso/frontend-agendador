@@ -5,6 +5,20 @@ export interface event {
 }
 
 
+interface Question{
+  id: number
+  question: string
+  answers: string[]
+  userSelectAnswer: number
+}
+
+interface User{
+  name: string
+  email: string
+  number: string
+}
+
+
 interface DataDay {
   date: string
   disponibilidad: Disponibilidad[] | []
@@ -14,9 +28,15 @@ interface DataDay {
 
 interface Disponibilidad{
   hour: string
-  id: string
+  user: string | null
 }
   
+interface DayConfirm{
+  date: string
+  hour: string
+  location: string
+}
+
 interface CalendarEvent {
   title: string;
   start: Date;

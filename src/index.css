@@ -3,21 +3,37 @@
 @tailwind utilities;
   
 
-a.active{
-    background-color: #cddaffa6;
-    font-weight: bold;
-}
-
-a:hover{
-    background-color: #cddaffa6;
-}
-
 .custom-text-shadow-pink{
     text-shadow: 0 0 10px #ff7cb7, 0 0 25px #F7EEF2;
 }
 
+.custom-text-shadow-blue{
+    text-shadow: 0 0 10px #967cff, 0 0 25px #f0eef7;
+}
+
+.custom-text-shadow-red{
+    text-shadow: 0 0 10px #ff7c7c, 0 0 25px #f7eeee;
+}
+
 .custom-text-shadow-white{
     text-shadow: 0 0 10px #838383, 0 0 25px #fff;
+}
+
+.rbc-month-view {
+    z-index: 0;
+}
+
+.hide-scrollbar {
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Para Chrome, Safari y Opera */
+}
+
+.mascara{
+    mask-image: linear-gradient(to left, black 50%, transparent 90%);
 }
 
 .rbc-disabled-day{
@@ -34,11 +50,42 @@ a:hover{
     transition: background-color .5s ease;
 }
 
-.rbc-aviable-day:hover{
-    background-color: blue;
-}
-
 
 .rbc-button-link{
     pointer-events: none;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+th{
+    background-color: #202945;
+    color: white;
+}
+
+.rbc-has-event-day{
+    background-color: #e5f6e7;
+    width: 95%;
+}
+
+.header-animado{
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0px;
+    animation: adjust-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+}
+
+@keyframes adjust-header {
+    to{
+        background: rgba(0,0,0,.1);
+    }
 }

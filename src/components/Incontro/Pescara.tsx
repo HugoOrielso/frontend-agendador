@@ -1,18 +1,17 @@
 import AllDates from "../AllDates"
 import Aside from "../Aside"
+import AsideInfoPrenotare from "../AsideInfoPrenotare"
 import AsideInfoSalon from "./AsideInfoSalon"
 
 const Pescara = () => {
   return (
     <>
-      <div className="flex flex-col md:grid md:grid-cols-[250px,1fr] w-full">
         <Aside/>
-        <section className="overflow-hidden">
+        <div className="mt-[90px] w-full">
           <AsideInfoSalon/>
+          <AsideInfoPrenotare/>
           <AllDates/>
-        </section>
-      </div>
-
+        </div>
     </>
   )
 }

@@ -2,22 +2,16 @@ import { event } from "@/types";
 import dayjs from "dayjs";
 
 
+export const initialOptions = {
+    "client-id": "AUKNYvCuTiIgD9MbXhLFSgP8TGzX7OUf3obpVNdYV-puvZaHSn_8zFrLpdbps6X5_iNLFp7ioxuNoJ10",
+    "enable-funding":"venmo",
+    "disable-funding": "",
+    country: "US",
+    currency: "EUR",
+    "data-page-type": "product-details",
+    components: "buttons",
+    "data-sdk-integration-source": "developer-studio",
+};
 
 
-export const events:event[] = [
-    {
-        start: dayjs('2024-08-31T12:00:00').toDate(),
-        end: dayjs('2024-08-31T13:00:00').toDate(),
-        title: "ejemplo 1"
-    },
-    {
-        start: dayjs('2024-08-31T14:00:00').toDate(),
-        end: dayjs('2024-08-31T15:00:00').toDate(),
-        title: "ejemplo 2"
-    },
-    {
-        start: dayjs('2024-08-28T14:00:00').toDate(),
-        end: dayjs('2024-08-28T15:00:00').toDate(),
-        title: "ejemplo 3"
-    }
-]
+

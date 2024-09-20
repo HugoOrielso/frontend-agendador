@@ -1,15 +1,17 @@
 import audreyImg from '@/assets/audrey.webp'
+import sambImg from '@/assets/samb.webp'
+import pesbImg from '@/assets/pes.webp'
 
 
 const Selectubication = () => {
   return (
-    <section className="flex flex-col items-center justify-center w-full md:min-h-screen ">
-        <div className="flex flex-col items-center justify-center p-2 gap-16 md:w-full md:max-w-[90%]  md:border rounded sm:p-8 ">
-            <section className="flex items-center justify-center  w-full ">
-                <div className="flex flex-col gap-4 max-w-[350px] items-center justify-center">
+    <section className="flex flex-col items-center h-full justify-center mt-20 w-full">
+        <div className="flex h-full flex-col items-center justify-center border-none  gap-4 md:w-full   md:border rounded sm:p-8 lg:shadow lg:max-w-[95%] w-full">
+            <section className="flex items-center justify-center rounded-[20px] mx-2 p-2 w-full shadow ">
+                <div className="flex flex-col gap-4 max-w-[350px] items-center justify-center ">
                     <div className='flex gap-2 flex-col items-center justify-center'>
                         <picture>
-                            <img src={audreyImg} alt="avatar audrey" className='relative imginteligente aspect-auto overflow-hidden rounded-full shrink-0 size-28 object-cover'/>
+                            <img src={audreyImg} alt="avatar audrey" className='relative imginteligente aspect-auto  rounded-full shrink-0 size-28 object-cover   '/>
                         </picture>
                         <h2  className='text-[#E92176] text-2xl custom-text-shadow-pink'>Audrey lozano</h2>
                     </div>
@@ -20,32 +22,36 @@ const Selectubication = () => {
                     </div>
                 </div>
             </section>
-            <section className="flex flex-col gap-8 sm:flex-row w-full items-center justify-center">
-                <a href="/incontrope" className="flex bg-white  transition-all duration-300  max-w-[500px] w-full hover:bg-gradient-to-br border rounded from-white via-white white-200 hover:from-pink-100 hover:via-white hover:to-pink-200">
-                    <article className="flex flex-col min-h-[180px] w-full p-2   gap-8 ">
+            <section className="flex flex-col mb-12 gap-8 lg:flex-row w-full items-center lg:justify-between">
+                <a href="/incontrope" className="min-h-[180px] w-[95%] md:w-full max-w-[750px] rounded-[20px] before:absolute before:inset-0 before:w-full before:h-full before:bg-white before:-z-10 shadow relative flex  gap-5  items-stretch  overflow-hidden  transition-all duration-300  hover:scale-105">
+                    <div className='overflow-hidden flex w-[75%] flex-col items-start px-2 justify-center'>
                         <div className="flex items-center gap-2 ">
-                            <span className="flex shrink-0  overflow-hidden rounded-full border size-8 border-none bg-[#0AE8F0]"></span>
-                            <span className="text-left font-bold custom-text-shadow">Incontro in salone con Audrey Lozano PE</span>
+                            <span className="text-left font-bold custom-text-shadow text-[#E92176] custom-text-shadow-pink">Incontro in salone Pescara</span>
                         </div>
                         <div>
-                            <p className="flex text-pretty text-left text-sm sm:text-base ">
-                                Riccioluta mia! ti invito a leggere bene la descrizione sotto, prima di prenotare il nostro incontro. I servizi che puoi ricevere in salone sono:* Pacchetto Pre…
+                            <p className="flex text-pretty text-left text-sm lg:text-base overflow-hidden line-clamp-3 ">
+                                Riccioluta mia! ti invito a leggere bene la descrizione sotto, prima di prenotare il nostro incontro.
                             </p>
                         </div>
-                    </article>
+                    </div>
+                    <div>
+                        <img src={pesbImg} alt="imagen pescara" className=' -z-10 object-cover object-center h-full shrink-0  right-0 top-0 w-[200px] mascara' />
+                    </div>
                 </a>
-                <a href="/incontrosbt" className="flex bg-white transition-all duration-300  max-w-[500px] w-full hover:bg-gradient-to-br hover:from-pink-100 hover:via-white hover:to-pink-200 border rounded">
-                    <article className="flex flex-col min-h-[180px] w-full p-2  gap-8 ">
+                <a href="/incontrosbt" className="min-h-[180px] max-w-[750px] rounded-[20px] before:absolute before:inset-0 before:w-full before:h-full before:bg-white before:-z-10 shadow relative flex  gap-5  items-stretch  overflow-hidden transition-all duration-300  hover:scale-105 w-[95%] md:w-full ">
+                    <div className='overflow-hidden flex w-[75%] flex-col items-start px-2 justify-center'>
                         <div className="flex items-center gap-2 ">
-                            <span className="flex shrink-0  overflow-hidden rounded-full border size-8 border-none bg-[#0AE8F0]"></span>
-                            <span className="text-left font-bold">Incontro in salone con Audrey Lozano SBT</span>
+                            <span className="text-left font-bold custom-text-shadow text-[#E92176] custom-text-shadow-pink">Incontro in salone Sam Benedetto</span>
                         </div>
                         <div>
-                            <p className="flex text-pretty text-left text-sm sm:text-base ">
-                                Riccioluta mia! ti invito a leggere bene la descrizione sotto, prima di prenotare il nostro incontro. I servizi che puoi ricevere in salone sono:* Pacchetto Pre…
+                            <p className="flex text-pretty text-left text-sm lg:text-base overflow-hidden line-clamp-3 ">
+                                Riccioluta mia! ti invito a leggere bene la descrizione sotto, prima di prenotare il nostro incontro.
                             </p>
                         </div>
-                    </article>
+                    </div>
+                    <div>
+                        <img src={sambImg} alt="imagen pescara" className='-z-10 object-cover object-center h-full shrink-0  right-0 top-0 w-[200px] mascara' />
+                    </div>
                 </a>
             </section>
         </div>

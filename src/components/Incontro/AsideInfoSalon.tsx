@@ -10,13 +10,13 @@ const AsideInfoSalon = () => {
     const extractedPart = path.split('/').slice(0, 3).join("");
     
     return (
-    <section className='flex flex-col items-center w-full flex-1 grow  p-2'>
+    <section className='flex flex-col items-center w-full flex-1 grow px-2 my-4'>
         <div className=''>
-            <section className='flex gap-2 flex-col items-center justify-center'>
+            <section className='flex gap-2 flex-col items-center justify-center ' >
                 <picture>
-                    <img src={audreyImg} alt="avatar audrey" className='aspect-auto overflow-hidden rounded-full shrink-0 size-20 object-cover'/>
+                    <img src={audreyImg} alt="avatar audrey" className='relative imginteligente aspect-auto overflow-hidden rounded-full shrink-0 size-28 object-cover'/>
                 </picture>
-                <h2  className='text-[#E92176]' >Audrey lozano</h2>
+                <h2  className='text-[#E92176] text-2xl custom-text-shadow-pink' >Audrey lozano</h2>
                 {extractedPart === 'incontrosbt' && 
                     <>
                         <h2 className='font-semibold text-[#202945] text-2xl '>Incontro in salone con Audrey Lozano, San Benedetto del Tronto</h2>
@@ -32,9 +32,9 @@ const AsideInfoSalon = () => {
             <section className='flex flex-col items-start justify-center gap-4 mt-3'>
                 <p className='text-zinc-500 flex items-center gap-2'>
                     <span>
-                        <Reloj  />
+                        <Reloj />
                     </span>
-                    <span>
+                    <span className='text-[#03030c]'>
                         1:30 min
                     </span>
                 </p>
@@ -44,14 +44,14 @@ const AsideInfoSalon = () => {
                     </span>
                     <span>
                         {extractedPart === 'incontrosbt' && 
-                            <>
+                            <span className='text-[#03030c]'>
                                 Via Montebello 44, San Benedetto del Tronto
-                            </>
+                            </span>
                         }
                         {extractedPart === 'incontrope' && 
-                            <>
+                            <span className='text-[#03030c]'>
                                 Via Napoli 39, Pescara
-                            </>
+                            </span>
                         }
                     </span>
                 </p>
@@ -59,7 +59,7 @@ const AsideInfoSalon = () => {
                     <span>
                         <CreditCart/>
                     </span>
-                    <span>
+                    <span className='text-[#03030c]'>
                         € 50 EUR, minimo da accantonare
                     </span>
                 </p>

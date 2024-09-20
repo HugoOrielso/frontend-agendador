@@ -1,0 +1,11 @@
+.rbc-header{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #202945;
+}
+
+.rbc-allday-cell{
+    display: none;
+}
