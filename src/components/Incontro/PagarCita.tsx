@@ -5,7 +5,7 @@ import { UseCalendarStore } from "@/store/calendarStore";
 import PaypalButtonTotalPrice from "../buttonsPaypal/PaypalButtonTotalPrice";
 import PaypalButtonAbono from "../buttonsPaypal/PaypalButtonAbono";
 import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const PagarCita = () => {
     const abono = UseCalendarStore((state) => state.abono);
