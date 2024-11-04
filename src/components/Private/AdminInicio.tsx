@@ -6,6 +6,9 @@ import { Toaster } from "sonner"
 import {  useEffect } from "react"
 import '@/calendarAdmin.css'
 import HeaderAdmin from "./HeaderAdmin"
+import Footer from "./Footer"
+
+
 const AdminInicio = () => {
   dayjs.locale("it")
   const localizer = dayjsLocalizer(dayjs)
@@ -29,9 +32,7 @@ const AdminInicio = () => {
   const dayPropGetter = (date: Date) => {
     const today = dayjs().startOf('day'); 
     const isBeforeToday = dayjs(date).isBefore(today); 
-
     const hasEvent = allDays.some(event => dayjs(event.date).isSame(date, 'day'));
-
     if (hasEvent) {
       return {
         className: 'rbc-has-event-day' 
@@ -50,23 +51,29 @@ const AdminInicio = () => {
   }
 
   return (
-    <div className="flex flex-col w-full items-center justify-between">
+    <div className="min-h-screen w-full">
       <HeaderAdmin/>
-      <div className="flex flex-col w-full max-h-[500px]">
-        <Calendar 
-          localizer={localizer}  
-          style={{ width: "100%", padding: ".5em", height: "450px"}} 
-          selectable
-          onSelectSlot={handleSelectSlot}
-          dayPropGetter={dayPropGetter}
-          views={["month"]}
-        />
+      <div className=" m-[0 auto] w-full   min-h-screen grid grid-rows-[1fr,auto] ">
+        <main className="flex w-full flex-col md:flex-row items-center justify-center">
+
+          <section className="flex border rounded flex-col w-full max-w-[550px] max-h-[500px] ">
+            <Calendar 
+              localizer={localizer}  
+              style={{ width: "100%", padding: ".5em", maxHeight: "400px", height: "450px"}} 
+              selectable
+              onSelectSlot={handleSelectSlot}
+              dayPropGetter={dayPropGetter}
+              views={["month"]}
+            />
+          </section>
+          <section className="w-full max-w-[700px] ">
+            {dateSelectedByAdmin && 
+              <DaysDetails/>
+            }
+          </section>
+        </main>
+        <Footer />
       </div>
-      <section className="w-full">
-        {dateSelectedByAdmin && 
-          <DaysDetails/>
-        }
-      </section>
       <Toaster richColors/>
     </div>
   )

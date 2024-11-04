@@ -8,8 +8,15 @@ export interface event {
 interface Question{
   id: number
   question: string
-  answers: string[]
+  answers: answer[]
   userSelectAnswer: number
+}
+
+
+
+interface answer{
+  name: string
+  pricing: number
 }
 
 interface User{
@@ -18,6 +25,21 @@ interface User{
   number: string
 }
 
+interface NewEvent{
+  summary: string
+  location: string
+  start: {
+    dateTime: string,
+    timeZone: string
+  },
+  end: {
+    dateTime: string
+    timeZone: string
+  },
+  attendes: [
+    {email: string, displayName: string}
+  ]
+}
 
 interface DataDay {
   date: string

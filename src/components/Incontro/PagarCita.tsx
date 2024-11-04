@@ -1,45 +1,60 @@
-import { UseCalendarStore } from "@/store/calendarStore"
-import PaypalButton from "./PaypalButton"
-import dayjs from "dayjs";
+import DatosConfirmados from "./DatosUser";
 import 'dayjs/locale/it'; 
-import { CalendarCheck, GeoLocationSalon, Reloj } from "../Icons";
+import Precio from "./Precio";
+import { UseCalendarStore } from "@/store/calendarStore";
+import PaypalButtonTotalPrice from "../buttonsPaypal/PaypalButtonTotalPrice";
+import PaypalButtonAbono from "../buttonsPaypal/PaypalButtonAbono";
+import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const PagarCita = () => {
-    dayjs.locale('it');
+    const abono = UseCalendarStore((state) => state.abono);
     const nameUser = UseCalendarStore(state=> state.nameUser)
-    
     const emailUser = UseCalendarStore(state=> state.emailUser)
     const numberUser = UseCalendarStore(state=> state.numberUser)
-    const dayConfirmed = UseCalendarStore(state => state.dayConfirm)
-    const formatDate = (dateString:string) => {
-        return dayjs(dateString).format('dddd, D MMMM');
-    };
+    const paquete = UseCalendarStore((state) => state.paquete);
+    const precio = UseCalendarStore((state) => state.priceData);
+    useEffect(()=>{
+    },[abono])
     return (
-    <section className="z-0 border-x  px-1 w-full h-full">
-        <h2 className="font-semibold">Dettagli dell'appuntamento</h2>
-        <div className="w-full flex flex-col border mb-4 rounded p-1">
-            
-            <div className="flex w-full flex-col items-center my-1">
-                <h3 className="font-semibold">Dati Utente</h3>
-                { nameUser ? 
-                    <div className="w-full items-start">
-                        <h2> Nome: <span className="font-medium">{nameUser}</span>  </h2>
-                        <h2> Email: <span className="font-medium">{emailUser} </span>  </h2>
-                        <h2> Cellulare: <span className="font-medium">{numberUser}</span>  </h2>
-                    </div>:
-                    <h2 className="font-medium">Nessuno</h2> 
-                }
+        <section className=" flex flex-col md:flex-row text-start h-full  items-center md:justify-evenly justify-center w-full rounded  ">
+            <div className="w-full gap-2 text-zinc-700 ">
+                <DatosConfirmados/>
+                <p>Il prezzo varia a seconda del servizio, anche se sei un utente che ha già effettuato un servizio.</p>
+                <p > <span className="font-semibold text-black"> Prezzo minimo: 50€ </span>, 
+                minimo per poter prenotare l'appuntamento </p>
             </div>
+            <motion.div className="flex flex-col rounded w-full items-center justify-center">
+                <h1 className="text-lg font-semibold">Pagamenti</h1>
+                {nameUser && emailUser && numberUser && paquete ?
+                <section className="flex flex-col  gap-2 items-center justify-evenly w-full">
+                    <Precio/>
+                    <div className="w-full">
 
-            {
-                dayConfirmed &&
-                <p className="flex items-center gap-2"> Data:  <span className="font-medium"> {formatDate(dayConfirmed?.date)}</span> <span> <CalendarCheck/> </span> </p>
-            }
-            <p className=" flex items-center gap-2"> Ora: <span className="font-medium">{dayConfirmed?.hour}</span> <span> <Reloj/> </span>  </p>
-            <p className="flex items-center gap-2"> Ubicazione: <span className="font-medium"> {dayConfirmed?.location} </span> <span> <GeoLocationSalon/> </span>  </p>
-        </div>
-        <PaypalButton/>
-    </section>
+                    {abono ? 
+                    <div className="w-full flex items-center justify-center md:gap-4 md:px-2">
+                        <span className="text-3xl">{precio}€</span>
+                        <PaypalButtonTotalPrice/>
+                    </div>
+
+                    :
+                    <div className="w-full flex items-center justify-center md:gap-4 md:px-2">
+                        <span className="text-3xl">50€</span>
+                        <PaypalButtonAbono/>
+                    </div>
+                    }
+
+                    <p className="text-sm md:text-xl font-semibold text-gray-800 md:px-2">{paquete} ✅</p>
+                    <p className="text-sm md:text-xl font-semibold text-gray-800 md:px-2">Totale: {precio}€</p>
+                    </div>
+                </section>
+                :
+                <div>
+                    <p className="text-sm px-2">Riccioluta! 😃, Per favore, completa i dati del modulo per abilitare la sezione dei pagamenti. Questi dati sono necessari per identificare la persona che effettua il pagamento e per memorizzare correttamente le informazioni. Non dimenticare di selezionare anche il servizio, poiché è necessario. </p>
+                </div>
+                }
+            </motion.div>
+        </section>
     )
 }
 

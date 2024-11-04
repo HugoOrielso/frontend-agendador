@@ -3,7 +3,7 @@
 import axios from "axios";
 import { toast } from "sonner";
 
-const baseUrl = "http://localhost:4321/api/";
+const baseUrl =  import.meta.env.VITE_ENV === "development" ? "http://localhost:4321/api/" : ""
 
 export const customAxios = axios.create({
   baseURL: baseUrl,

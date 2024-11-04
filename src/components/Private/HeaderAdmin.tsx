@@ -5,7 +5,7 @@ import { Tools } from "../Icons"
 const HeaderAdmin = () => {
   const logout = UseAdminStore(state => state.logoutAdmin)
   return (
-<aside className='fixed top-0 left-0 flex w-full bg-[#fafafa28] backdrop-blur-md  z-[99999999]'>
+  <aside className='fixed top-0 left-0 flex w-full bg-transparent  z-[99999999]'>
   <Drawer.Root >
       <Drawer.Trigger asChild>
         <button className='b-zinc-200 p-4 border border-zinc-600 rounded m-2'> <Tools/> </button>

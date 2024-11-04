@@ -1,68 +1,80 @@
 
 import {Drawer} from 'vaul'
 
-const AsideInfoPrenotare = () => {
+const  AsideInfoPrenotare = () => {
 
   return (
-    <aside className='z-[9999999999999] '>
+    <aside >
     <Drawer.Root >
     <Drawer.Trigger asChild>
-      <button className='text-blue-600'>Leggere</button>
+      <button className='text-blue-600 z-0'>Leggere descripzione</button>
     </Drawer.Trigger>
     <Drawer.Portal>
       <Drawer.Overlay className="fixed inset-0 bg-black/40" />
       <Drawer.Content className="bg-white flex flex-col fixed bottom-0 left-0 right-0 max-h-[91%] rounded-t-[10px]">
-        <button>Cerrar</button>
-        <div className="max-w-md w-full mx-auto flex flex-col overflow-auto hide-scrollbar p-4 rounded-t-[10px]">
-          <input
-            className="border border-gray-400 my-8"
-            placeholder="Input"
-          />
-          <p>
-            But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual teachings of the
-            great explorer of the truth, the master-builder of human
-            happiness. No one rejects, dislikes, or avoids pleasure itself,
-            because it is pleasure, but because those who do not know how to
-            pursue pleasure rationally encounter consequences that are
-            extremely painful. Nor again is there anyone who loves or pursues
-            or desires to obtain pain of itself, because it is pain, but
-            because occasionally circumstances occur in which toil and pain
-            can procure him some great pleasure. To take a trivial example,
-            which of us ever undertakes laborious physical exercise, except to
-            obtain some advantage from it? But who has any right to find fault
-            with a man who chooses to enjoy a pleasure that has no annoying
-            consequences, or one who avoids a pain that produces no resultant
-            pleasure?
-          </p>
-          <input
-            className="border border-gray-400 my-8"
-            placeholder="Input"
-          />
-          <p>
-            On the other hand, we denounce with righteous indignation and
-            dislike men who are so beguiled and demoralized by the charms of
-            pleasure of the moment, so blinded by desire, that they cannot
-            foresee the pain and trouble that are bound to ensue; and equal
-            blame belongs to those who fail in their duty through weakness of
-            will, which is the same as saying through shrinking from toil and
-            pain. These cases are perfectly simple and easy to distinguish. In
-            a free hour, when our power of choice is untrammelled and when
-            nothing prevents our being able to do what we like best, every
-            pleasure is to be welcomed and every pain avoided. But in certain
-            circumstances and owing to the claims of duty or the obligations
-            of business it will frequently occur that pleasures have to be
-            repudiated and annoyances accepted. The wise man therefore always
-            holds in these matters to this principle of selection: he rejects
-            pleasures to secure other greater pleasures, or else he endures
-            pains to avoid worse pains.
-          </p>
-          <input
-            className="border border-gray-400 my-8"
-            placeholder="Input"
-          />
-        </div>
+      <div className="flex flex-col w-full items-start px-4 py-3 text-sm overflow-y-scroll">
+        <p className='font-bold text-lg text-[#4674ff]'>Descripzione</p>
+        <p>I servizi che puoi ricevere in salone sono:</p>
+        <ul className="list-disc pl-8 ">
+          <li>Pacchetto <span className="font-bold">Premium</span> </li>
+          <li>Pacchetto <span className="font-bold">Top</span> </li>
+          <li>Pacchetto <span className="font-bold">Base</span> </li>
+          <li>Pacchetto <span className="font-bold">Recupero</span> </li>
+          <li><span className="font-bold">Trattamento</span> </li>
+          <li><span className="font-bold">Bambini</span> (da 8 a 13 anni) </li>
+        </ul>
+        <br />
+        <p>
+            Pacchetto <span className="font-bold">PREMIUM</span> e <span className="font-bold">RECUPERO</span> prevede: L'affiancamento "Conosco i miei ricci" con una guida personalizzata che riceverai tramite email, circa 10 giorni dopo l'incontro, con tutti gli step da seguire a casa, supportati dal video del tuo styling e l'elenco dei prodotti adatti a te.
+        </p>
+        <p>
+            Comprende <strong className="font-bold">taglio, styling e trattamento</strong><strong className="font-bold">una videocall di 15 minuti;&nbsp;</strong>dopo 30 giorni<strong className="font-bold">con Audrey per aggiornamento;&nbsp;</strong>percorso e ricontatto dal team tramite Whastapp, dopo 45 giorni per conclusioni finali del percorso.
+        </p>
+        <p>
+            <strong className="font-bold"><u>NB.</u></strong>&nbsp;Nel pacchetto&nbsp;<strong className="font-bold">RECUPERO</strong>&nbsp;hai compreso un secondo appuntamento da utilizzare entro 6 mesi per taglio punte.
+        </p>
+        <br />
+        <p>
+            <em>👉🏾</em>&nbsp;Il pacchetto&nbsp;<strong className="font-bold">TOP&nbsp;</strong>(taglio forma e styling)<strong className="font-bold">&nbsp;</strong>e&nbsp;<strong className="font-bold">BASE</strong>&nbsp;(taglio punte e styling) sono&nbsp;<strong className="font-bold">esclusivi</strong>&nbsp;delle&nbsp;<strong className="font-bold">Ricciolute</strong>&nbsp;che hanno concluso o stanno facendo l'affiancamento "<strong className="font-bold">Conosco i mie ricci"&nbsp;</strong>attraverso il pacchetto&nbsp;<strong className="font-bold">Premium o Recupero.</strong>
+        </p>
+        <br />
+        <p>
+            Per confermare il tuo appuntamento basta un <strong className="font-bold">acconto di 50€.</strong>
+        </p>
+        <br />
+        <p>
+            <strong className="text-bold">🚀 </strong>Per ogni servizio, potrai fare il saldo direttamente in salone in&nbsp;<strong className="text-bold">contanti</strong>,&nbsp;<strong className="text-bold">bancomat</strong>&nbsp;o&nbsp;<strong className="text-bold">scalapay&nbsp;</strong>oltre che acquistare i prodotti&nbsp;con le stesse modalità, se disponibili.
+        </p>
+        <p>
+            <em>In caso di&nbsp;</em><strong className="font-bold"><em>annullamento</em></strong><em>&nbsp;(entro le 48H) potrà essere richiesto il rimborso dell'acconto, superate le 48H ti verrà assegnato un nuovo appuntamento.&nbsp;Verrano accettate richieste mandate via mail.</em>
+        </p>
+        <br />
+        <p>
+            <em>In caso di&nbsp;</em><strong className="font-bold"><em>annullamento</em></strong><em>&nbsp;(entro le 48H) potrà essere richiesto il rimborso dell'acconto, superate le 48H ti verrà assegnato un nuovo appuntamento.&nbsp;Verrano accettate richieste mandate via mail.</em>
+        </p>
+        <br />
+        <p>
+            📧 Dopo la prenotazione&nbsp;<strong className="font-bold">riceverai una mail</strong>&nbsp;con le&nbsp;<strong className="font-bold">indicazioni&nbsp;</strong>per le&nbsp;<strong className="font-bold">foto</strong>&nbsp;dei tuoi capelli che&nbsp;<strong className="font-bold"><u>dovrai inviare</u></strong>&nbsp;per preparare al meglio l'incontro.
+        </p>
+        <br />
+        <p><em>Se non la ricevi controlla la casella "Spam".</em></p>
+        <br />
+        <p>
+            👩🏽&zwj;🦱 Per darti una miglior esperienza è richiesto di portare i&nbsp;<strong className="font-bold">capelli puliti da almeno 1 giorno</strong>&nbsp;e preferibilmente senza nodi. Si raccomanda di evitare legature strette il giorno stesso dell'appuntamento per non compromettere la forma naturale del riccio.
+        </p>
+        <br />
+        <p>
+            ⚠️ In caso di nodi difficili (che prolunghino l'appuntamento di più di 15') verrà considerato un <strong className="font-bold">sovrapprezzo</strong> di&nbsp;<strong className="font-bold">€20</strong>&nbsp;⚠️
+        </p>
+        <br />
+        <p>
+            💬 Se hai bisogno di info su costi 👉🏾<a href="https://www.canva.com/design/DAFcbrt8Obs/iykJBMidUZDuvtYu31PmrA/view?utm_content=DAFcbrt8Obs&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=editor" target="_blank">&nbsp;CLICCA QUI</a>
+        </p>
+        <br />
+        <p>Non vedo l'ora di incontrarti</p>
+        <p>Un abbraccio</p>
+        <p>Audrey</p>
+      </div>
       </Drawer.Content>
     </Drawer.Portal>
   </Drawer.Root>

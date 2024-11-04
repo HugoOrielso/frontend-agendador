@@ -38,30 +38,26 @@ const ValidarExistenciaDelUsuario = () => {
     }
 
     return (
-    <section className='border-x h-full w-full items-center justify-start px-1 pb-1 flex flex-col'>
-        <h2 className="font-semibold">¡Riccioluta! siamo all'ultimo passaggio, conferma i tuoi dati</h2>
-        <p>Così posiamo vedere se hai buono di sconto</p>
-        <form onSubmit={handleSubmit} className="flex w-[95%] flex-col items-center justify-center sm:w-full max-w-[500px] gap-3 mt-8 border rounded p-4 sm:p-6 ">
-            <label htmlFor="email" className="w-full">
-                <span>Email:</span>
-                <input type="email" id="email" name="email" required className="w-full border p-2 rounded" />
-            </label>
-            <label htmlFor="nombre" className="w-full">
-                <span>Nome:</span>
-                <input type="text" id="nombre" name="nombre" required className="w-full border p-2 rounded"/>
-            </label>
-            <label htmlFor="celular" className="w-full">
-                <span>Cellulare:</span>
-                <input type="text" id="celular" name="celular" required className="w-full border p-2 rounded"/>
-            </label>
-            <button className=" border p-3 rounded">Enviare</button>
-        </form>
-
-        <div>
-
+    <section className='border rounded h-full w-full items-center gap-2 justify-start px-1 pb-1 flex flex-col'>
+        <div className='w-full'>
+            <h2 className="font-semibold">¡Riccioluta! siamo all'ultimo passaggio, conferma i tuoi dati</h2>
+            <p>Così posiamo vedere se hai buono di sconto</p>
+            <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center sm:w-full gap-3  border rounded p-2 sm:p-6 ">
+                <label htmlFor="email" className="w-full">
+                    <span>Email:</span>
+                    <input type="email" id="email" name="email" required className="w-full border p-2 rounded" />
+                </label>
+                <label htmlFor="nombre" className="w-full">
+                    <span>Nome:</span>
+                    <input type="text" id="nombre" name="nombre" required className="w-full border p-2 rounded"/>
+                </label>
+                <label htmlFor="celular" className="w-full">
+                    <span>Cellulare:</span>
+                    <input type="text" id="celular" name="celular" required className="w-full border p-2 rounded"/>
+                </label>
+                <button className=" border p-2 w-full bg-blue-400 rounded hover:bg-blue-600 text-white font-semibold hover:scale-105 trasition duration-200">Confirmare</button>
+            </form>
         </div>
-
-
     </section>
   )
 }

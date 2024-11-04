@@ -14,6 +14,10 @@ interface StateCalendar {
   emailUser: string | null
   numberUser: string | null
   locationSalone: string | null
+  priceData: number
+  abono: boolean
+  setAbono:  (date:boolean) => void;
+  paquete: string,
   deleteDataUser: ()=> void
   setDataUser: (name:string, email: string, number: string)=> void
   setDayConfirm: (dayConfirmado: DayConfirm)=> void
@@ -21,6 +25,7 @@ interface StateCalendar {
   dateSelectedByUser: string;
   getEnabledDays: () => Promise<void>;
   selectDayByUser: (date:string) => void;
+  setPriceData: (pricing:number, name: string) => void;
 }
 
 export const UseCalendarStore = create<StateCalendar>()(persist((set,get) => ({
@@ -35,6 +40,15 @@ export const UseCalendarStore = create<StateCalendar>()(persist((set,get) => ({
     nameUser: null,
     locationSalone: null,
     numberUser: null,
+    priceData: 50,
+    paquete: "",
+    abono: false,
+    setAbono(date) {
+      set({abono:date})
+    },
+    setPriceData(pricing, name) {
+      set({priceData: pricing, paquete: name })
+    },
     deleteDataUser() {
       set({ nameUser: null, emailUser: null, numberUser: null })
     },

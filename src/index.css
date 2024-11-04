@@ -24,12 +24,12 @@
 }
 
 .hide-scrollbar {
-    scrollbar-width: none; /* Para Firefox */
-    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;  /* Para Chrome, Safari y Opera */
+  display: none;  
 }
 
 .mascara{
@@ -37,16 +37,16 @@
 }
 
 .rbc-disabled-day{
-    background-color: #e6e6e6;
     cursor: not-allowed;
     pointer-events:none;
-    color: #ccc;
+    color: #ececec;
 }
 
 .rbc-aviable-day{
     width: 100%;
     height: 100%;
     cursor: pointer;
+    background-color: #e0ffe4;
     transition: background-color .5s ease;
 }
 

@@ -5,15 +5,11 @@ const MyDates = () => {
 
   async function getUser(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-  
     const form = e.currentTarget as HTMLFormElement;
-    
     const data = Object.fromEntries(new FormData(form));
-    console.log(data);
     
     try {
       const response = await customAxios.get(`users/${data.email}`);
-      
       if (response.status === 200 && response.data.status == 'no content') {
         toast.info('No tenemos citas agendadas con tu correo');
       } else if (response.status === 200) {
@@ -33,7 +29,6 @@ const MyDates = () => {
                   Email:
                   <input type="email" id="email" name="email" required className="flex transition-all duration-500 focus:bg-[#DEE7FF] rounded w-full border p-8"/>
                 </label>
-                
                 <button className="flex rounded text-lg sm:text-2xl bg-[#202945] p-4 max-w-36 items-center justify-center w-full text-white transition-all duration-300 hover:bg-[#2c3c6c]">Consultare</button>
             </form>
         </div>

@@ -3,22 +3,14 @@
         {
             "id": 1,
             "question": "Per quale servizio vuoi prenotare?",
-            "answers": ["Pachetto premium", "Pachetto Top (taglio forma e styling)", "Pachetto base (taglio punte e styling)", "Pachetto Recupero", "Trattamento e Styling", "Bambini (dagli 8 ai 13 anni) "]
-        }, 
-        {
-            "id": 2,
-            "question": "Come definiresti i tuoi capelli?",
-            "answers": ["Sotilli", "Spessi", "Non lo so"]
-        },
-        {
-            "id": 3,
-            "question": "Pensi di avere molti o pochi capelli?",
-            "answers": ["Molti", "Pochi", "Non lo so"]
-        },
-        {
-            "id": 4,
-            "question": "Che tipologia di riccio hai?",
-            "answers": ["Ondulato", "Riccio", "Afro"]
+            "answers": [
+                {"name": "Pachetto premium", "pricing": 250}, 
+                {"name": "Pachetto Top (taglio forma e styling)", "pricing": 200}, 
+                {"name": "Pachetto base (taglio punte e styling)", "pricing": 150}, 
+                {"name": "Pachetto Recupero", "pricing": 100}, 
+                {"name": "Trattamento e Styling", "pricing": 100}, 
+                {"name": "Bambini (dagli 8 ai 13 anni)", "pricing":100}
+            ]
         }
     ]
 }

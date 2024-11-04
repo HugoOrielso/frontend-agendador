@@ -7,10 +7,11 @@ const Aside = () => {
   
 
   return (
-  <aside className='fixed top-0 left-0 flex w-full bg-[#fafafa28] backdrop-blur-md  z-[99999999] '>
+  <aside className=' top-0 left-0 flex w-full bg-transparent z-[99999999] '>
+  <div className='z-[9999]'>
   <Drawer.Root >
       <Drawer.Trigger asChild>
-        <button className='b-zinc-200 p-3 border border-zinc-600 rounded m-2'> <Tools/> </button>
+        <button className='b-zinc-200 p-3 m-1 border border-zinc-600 rounded '> <Tools/> </button>
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
@@ -41,6 +42,7 @@ const Aside = () => {
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
+    </div>
     </aside>
   )
 }
